@@ -1,0 +1,112 @@
+body {
+  display: flex; /* Align elements in a column layout */
+  flex-direction: column; /* Stack child elements vertically */
+  align-items: center; /* Center child elements horizontally */
+  background-color: #23272f; /* Set background color */
+  color: white; /* Set text color */
+}
+
+h1 {
+  text-align: center; /* Center the heading text */
+}
+
+.board {
+  display: grid; /* Create a grid layout for the board */
+  grid-template-columns: 100px 100px 100px; /* Define 3 equal-width columns */
+  grid-template-rows: 100px 100px 100px; /* Define 3 equal-height rows */
+  cursor: pointer; /* Show pointer cursor when hovering over tiles */
+  position: relative; /* Allow positioning of strike lines over the board */
+}
+
+.tile {
+  color: currentColor; /* Use current text color for tile content */
+  font-size: 2em; /* Set font size for X or O */
+  display: flex; /* Use flexbox for centering content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.right-border {
+  border-right: 0.2em solid #0074a6; /* Adds a solid right border to the element with a thickness of 0.2em and color #0074a6 */
+}
+
+.bottom-border {
+  border-bottom: 0.2em solid #0074a6; /* Adds a solid bottom border to the element with a thickness of 0.2em and color #0074a6 */
+}
+
+.x-hover:hover::after {
+  content: "X"; /* When hovering, display an "X" character */
+  opacity: 0.4; /* The "X" will appear with a slight transparency */
+}
+
+.o-hover:hover::after {
+  content: "O"; /* When hovering, display an "O" character */
+  opacity: 0.4; /* The "O" will also appear with a slight transparency */
+}
+
+.strike {
+  position: absolute; /* Position the strike lines over the board */
+  background-color: darkorange; /* Set strike color */
+}
+
+.strike-row-1 {
+  width: 100%; /* Set full width for horizontal strikes */
+  height: 4px; /* Set height for the strike line */
+  top: 15%;
+}
+.strike-row-2 {
+  width: 100%; /* Set full width for horizontal strikes */
+  height: 4px; /* Set height for the strike line */
+  top: 48%;
+}
+.strike-row-3 {
+  width: 100%; /* Set full width for horizontal strikes */
+  height: 4px; /* Set height for the strike line */
+  top: 83%;
+}
+.strike-column-1 {
+  height: 100%; /* Set full height for vertical strikes */
+  width: 4px; /* Set width for vertical strike line */
+  left: 15%;
+}
+.strike-column-2 {
+  height: 100%; /* Set full height for vertical strikes */
+  width: 4px; /* Set width for vertical strike line */
+  left: 48%;
+}
+.strike-column-3 {
+  height: 100%; /* Set full height for vertical strikes */
+  width: 4px; /* Set width for vertical strike line */
+  left: 83%;
+}
+.strike-diagonal-1 {
+  width: 90%; /* Set the width of the diagonal strike to 90% of the grid's width */
+  height: 4px; /* Set the height of the strike line */
+  top: 50%; /* Position the strike vertically at the center of the board */
+  left: 5%; /* Position the strike slightly from the left edge */
+  transform: skewY(45deg); /* Apply a skew transform to make the line diagonal */
+}
+.strike-diagonal-2 {
+  width: 90%; /* Set the width of the second diagonal strike to 90% */
+  height: 4px; /* Set the height of the strike line */
+  top: 50%; /* Position the strike vertically at the center of the board */
+  left: 5%; /* Position the strike slightly from the left edge */
+  transform: skewY(-45deg); /* Apply a skew transform in the opposite direction to create the other diagonal */
+}
+
+.game-over {
+  text-align: center; /* Center the "game over" text */
+  border: #5468ff 8px dotted; /* Dotted border around game over message */
+  padding: 10px; /* Add padding around the message */
+  margin-top: 50px; /* Add margin above the message */
+  font-size: 1.5em; /* Set font size for game over text */
+}
+
+.reset-button {
+  margin-top: 50px; /* Add space above the reset button */
+  padding: 20px; /* Add padding inside the button */
+  background-color: #0074a6; /* Set background color for the button */
+  color: white; /* Set text color for the button */
+  width: 100%; /* Make the button take up full width */
+  font-size: 1.5em; /* Set font size for the button */
+}
